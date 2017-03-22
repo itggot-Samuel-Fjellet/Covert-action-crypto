@@ -1,6 +1,6 @@
 def covert_action_crypto()
 
-  phrase = "Never doubt the worm"
+  phrase = "never doubt the worm".downcase
 
   root13 = {}
   root13["a"] = "n"
@@ -52,7 +52,7 @@ def covert_action_crypto()
 
   end
 
-  until assumption == string
+  until assumption == phrase
 
     puts string
     puts assumption
@@ -72,11 +72,11 @@ def covert_action_crypto()
     while index < string.size
       if change == string[index]
 
-        assumption.insert(index, change.to_s)
+        assumption.insert(index, changer.to_s)
 
-        assumption.delete_at(index+1)
-
+        assumption[index+1] = ""
       end
+
 
       index += 1
     end
