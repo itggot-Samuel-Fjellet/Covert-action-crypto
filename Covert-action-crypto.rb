@@ -1,6 +1,6 @@
 def covert_action_crypto()
 
-  phrase = "never doubt the worm".downcase
+  phrase = "Lima loves the pee pee".downcase
 
   root13 = {}
   root13["a"] = "n"
@@ -58,31 +58,34 @@ def covert_action_crypto()
     puts assumption
     puts "What letter do you want to change?"
 
-    change = gets.chomp
+    change = gets.chomp.downcase
 
-    puts "Which letter do you wish to change it to?"
+    if change != " "
+      system "cls"
+      puts "Which letter do you wish to change it to?"
 
-    changer = gets.chomp
+      changer = gets.chomp.downcase
 
-    system "cls"
+      index = 0
 
+      while index < string.size
+        if change == string[index]
 
-    index = 0
+          assumption.insert(index, changer.to_s)
 
-    while index < string.size
-      if change == string[index]
+          assumption[index+1] = ""
+        end
 
-        assumption.insert(index, changer.to_s)
+        index += 1
 
-        assumption[index+1] = ""
       end
-
-
-      index += 1
+    else
+      puts "Don't change the spaces, it will only get confusing."
     end
   end
 
-  puts "Yay!"
+  puts phrase
+  puts "You win!"
 
 end
 
