@@ -2,7 +2,30 @@ def covert_action_crypto()
 
   thing = false
 
-  phrase = "LIMA LOVES THE PEE PEE"
+  phrases = []
+  File.open("phrases/phraseone.txt", "r").each_line do |line|
+   phrases << line
+  end
+
+  File.open("phrases/phrasetwo.txt", "r").each_line do |line|
+   phrases << line
+  end
+
+  File.open("phrases/phrasethree.txt", "r").each_line do |line|
+   phrases << line
+  end
+
+  File.open("phrases/phrasefour.txt", "r").each_line do |line|
+   phrases << line
+  end
+
+  File.open("phrases/phrasefive.txt", "r").each_line do |line|
+   phrases << line
+  end
+
+  random = rand(0..4)
+
+  phrase = phrases[random]
 
   alpha = " "
   bravo = " "
@@ -86,6 +109,12 @@ def covert_action_crypto()
   root13["y"] = "L"
   root13["z"] = "M"
   root13[" "] = " "
+  root13["."] = "."
+  root13[","] = ","
+  root13["!"] = "!"
+  root13["?"] = "?"
+  root13[":"] = ":"
+  root13[";"] = ";"
 
   assumption = ""
   index = 0
@@ -218,32 +247,32 @@ def covert_action_crypto()
       thing = false
     end
 
-    puts "#{alpha} A #{a} | #{string}"
-    puts "#{bravo} B #{b} | #{assumption}"
-    puts "#{charlie} C #{c} | Which letter do you want to change?"
-    puts "#{delta} D #{d} |"
-    puts "#{echo} E #{e} |"
-    puts "#{foxtrot} F #{f} |"
-    puts "#{golf} G #{g} |"
-    puts "#{hotel} H #{h} |"
-    puts "#{india} I #{i} |"
-    puts "#{juliet} J #{j} |"
-    puts "#{kilo} K #{k} |"
-    puts "#{lima} L #{l} |"
-    puts "#{mike} M #{m} |"
-    puts "#{november} N #{n} |"
-    puts "#{oscar} O #{o} |"
-    puts "#{papa} P #{poo} |"
-    puts "#{quebec} Q #{q} |"
-    puts "#{romeo} R #{r} |"
-    puts "#{sierra} S #{s} |"
-    puts "#{tango} T #{t} |"
-    puts "#{uniform} U #{u} |"
-    puts "#{victor} V #{v} |"
-    puts "#{whiskey} W #{w} |"
-    puts "#{xray} X #{x} |"
-    puts "#{yankee} Y #{y} |"
-    puts "#{zulu} Z #{z} |"
+    puts "#{alpha} | A #{a}\t\t| #{string}"
+    puts "#{bravo} | B #{b}\t\t| #{assumption}"
+    puts "#{charlie} | C #{c}\t\t| Which letter do you wish to change?"
+    puts "#{delta} | D #{d}\t\t|"
+    puts "#{echo} | E #{e}\t\t|"
+    puts "#{foxtrot} | F #{f}\t\t|"
+    puts "#{golf} | G #{g}\t\t|"
+    puts "#{hotel} | H #{h}\t\t|"
+    puts "#{india} | I #{i}\t\t|"
+    puts "#{juliet} | J #{j}\t\t|"
+    puts "#{kilo} | K #{k}\t\t|"
+    puts "#{lima} | L #{l}\t\t|"
+    puts "#{mike} | M #{m}\t\t|"
+    puts "#{november} | N #{n}\t\t|"
+    puts "#{oscar} | O #{o}\t\t|"
+    puts "#{papa} | P #{poo}\t\t|"
+    puts "#{quebec} | Q #{q}\t\t|"
+    puts "#{romeo} | R #{r}\t\t|"
+    puts "#{sierra} | S #{s}\t\t|"
+    puts "#{tango} | T #{t}\t\t|"
+    puts "#{uniform} | U #{u}\t\t|"
+    puts "#{victor} | V #{v}\t\t|"
+    puts "#{whiskey} | W #{w}\t\t|"
+    puts "#{xray} | X #{x}\t\t|"
+    puts "#{yankee} | Y #{y}\t\t|"
+    puts "#{zulu} | Z #{z}\t\t|"
 
 
     change = gets.chomp.upcase
@@ -252,32 +281,32 @@ def covert_action_crypto()
 
       system "cls"
 
-      puts "#{alpha} A #{a} | #{string}"
-      puts "#{bravo} B #{b} | #{assumption}"
-      puts "#{charlie} C #{c} | Which letter do you want to change?"
-      puts "#{delta} D #{d} | #{change}"
-      puts "#{echo} E #{e} | Which letter do you wish to change it to?"
-      puts "#{foxtrot} F #{f} |"
-      puts "#{golf} G #{g} |"
-      puts "#{hotel} H #{h} |"
-      puts "#{india} I #{i} |"
-      puts "#{juliet} J #{j} |"
-      puts "#{kilo} K #{k} |"
-      puts "#{lima} L #{l} |"
-      puts "#{mike} M #{m} |"
-      puts "#{november} N #{n} |"
-      puts "#{oscar} O #{o} |"
-      puts "#{papa} P #{poo} |"
-      puts "#{quebec} Q #{q} |"
-      puts "#{romeo} R #{r} |"
-      puts "#{sierra} S #{s} |"
-      puts "#{tango} T #{t} |"
-      puts "#{uniform} U #{u} |"
-      puts "#{victor} V #{v} |"
-      puts "#{whiskey} W #{w} |"
-      puts "#{xray} X #{x} |"
-      puts "#{yankee} Y #{y} |"
-      puts "#{zulu} Z #{z} |"
+      puts "#{alpha} | A #{a} | #{string}"
+      puts "#{bravo} | B #{b} | #{assumption}"
+      puts "#{charlie} | C #{c} | Which letter do you wish to change?"
+      puts "#{delta} | D #{d} | #{change}"
+      puts "#{echo} | E #{e} | Which letter do you wish to change it to?"
+      puts "#{foxtrot} | F #{f} |"
+      puts "#{golf} | G #{g} |"
+      puts "#{hotel} | H #{h} |"
+      puts "#{india} | I #{i} |"
+      puts "#{juliet} | J #{j} |"
+      puts "#{kilo} | K #{k} |"
+      puts "#{lima} | L #{l} |"
+      puts "#{mike} | M #{m} |"
+      puts "#{november} | N #{n} |"
+      puts "#{oscar} | O #{o} |"
+      puts "#{papa} | P #{poo} |"
+      puts "#{quebec} | Q #{q} |"
+      puts "#{romeo} | R #{r} |"
+      puts "#{sierra} | S #{s} |"
+      puts "#{tango} | T #{t} |"
+      puts "#{uniform} | U #{u} |"
+      puts "#{victor} | V #{v} |"
+      puts "#{whiskey} | W #{w} |"
+      puts "#{xray} | X #{x} |"
+      puts "#{yankee} | Y #{y} |"
+      puts "#{zulu} | Z #{z} |"
 
       changer = gets.chomp.upcase
 
@@ -405,32 +434,32 @@ def covert_action_crypto()
 
   system "cls"
 
-  puts "#{alpha} A #{a} | #{string}"
-  puts "#{bravo} B #{b} | #{assumption}"
-  puts "#{charlie} C #{c} | Which letter do you want to change?"
-  puts "#{delta} D #{d} | #{change}"
-  puts "#{echo} E #{e} | Which letter do you wish to change it to?"
-  puts "#{foxtrot} F #{f} | #{changer}"
-  puts "#{golf} G #{g} | MESSAGE ENCODED"
-  puts "#{hotel} H #{h} |"
-  puts "#{india} I #{i} |"
-  puts "#{juliet} J #{j} |"
-  puts "#{kilo} K #{k} |"
-  puts "#{lima} L #{l} |"
-  puts "#{mike} M #{m} |"
-  puts "#{november} N #{n} |"
-  puts "#{oscar} O #{o} |"
-  puts "#{papa} P #{poo} |"
-  puts "#{quebec} Q #{q} |"
-  puts "#{romeo} R #{r} |"
-  puts "#{sierra} S #{s} |"
-  puts "#{tango} T #{t} |"
-  puts "#{uniform} U #{u} |"
-  puts "#{victor} V #{v} |"
-  puts "#{whiskey} W #{w} |"
-  puts "#{xray} X #{x} |"
-  puts "#{yankee} Y #{y} |"
-  puts "#{zulu} Z #{z} |"
+  puts "#{alpha} | A #{a} | #{string}"
+  puts "#{bravo} | B #{b} | #{assumption}"
+  puts "#{charlie} | C #{c} | Which letter do you wish to change?"
+  puts "#{delta} | D #{d} | #{change}"
+  puts "#{echo} | E #{e} | Which letter do you wish to change it to?"
+  puts "#{foxtrot} | F #{f} | #{changer}"
+  puts "#{golf} | G #{g} | MESSAGE DECODED"
+  puts "#{hotel} | H #{h} |"
+  puts "#{india} | I #{i} |"
+  puts "#{juliet} | J #{j} |"
+  puts "#{kilo} | K #{k} |"
+  puts "#{lima} | L #{l} |"
+  puts "#{mike} | M #{m} |"
+  puts "#{november} | N #{n} |"
+  puts "#{oscar} | O #{o} |"
+  puts "#{papa} | P #{poo} |"
+  puts "#{quebec} | Q #{q} |"
+  puts "#{romeo} | R #{r} |"
+  puts "#{sierra} | S #{s} |"
+  puts "#{tango} | T #{t} |"
+  puts "#{uniform} | U #{u} |"
+  puts "#{victor} | V #{v} |"
+  puts "#{whiskey} | W #{w} |"
+  puts "#{xray} | X #{x} |"
+  puts "#{yankee} | Y #{y} |"
+  puts "#{zulu} | Z #{z} |"
 
 end
 
