@@ -24,7 +24,6 @@ def covert_action_crypto()
   end
 
   random = rand(0..4)
-
   phrase = phrases[random]
 
   alpha = " "
@@ -53,6 +52,8 @@ def covert_action_crypto()
   xray = " "
   yankee = " "
   zulu = " "
+
+  letters = [alpha, bravo, charlie, delta, echo, foxtrot, golf, hotel, india, juliet, kilo, lima, mike, november, oscar, papa, quebec, romeo, sierra, tango, uniform, victor, whiskey, xray, yankee, zulu]
 
   a = 0
   b = 0
@@ -137,176 +138,115 @@ def covert_action_crypto()
 
   end
 
+  alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+  many = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, poo, q, r, s, t, u, v, w, x, y, z]
+
+  index = 0
   pindex = 0
 
   while pindex < phrase.size
 
-    if string[pindex] == "A"
-      a += 1
-    end
+    change = 0
 
-    if string[pindex] == "B"
-      b += 1
-    end
+    until change == 1
 
-    if string[pindex] == "C"
-      c += 1
-    end
+      if string[pindex] == alphabet[index]
 
-    if string[pindex] == "D"
-      d += 1
-    end
+        switch = many[index]
+        switch += 1
+        many[index] = switch
+        pindex += 1
+        index = 0
 
-    if string[pindex] == "E"
-      e += 1
-    end
+      elsif index == 27
+        index = 0
+        pindex += 1
+      else
+        index += 1
+      end
 
-    if string[pindex] == "F"
-      f += 1
+      if pindex <= phrase.size
+        change = 1
+      end
     end
-
-    if string[pindex] == "G"
-      g += 1
-    end
-
-    if string[pindex] == "H"
-      h += 1
-    end
-
-    if string[pindex] == "I"
-      i += 1
-    end
-
-    if string[pindex] == "J"
-      j += 1
-    end
-
-    if string[pindex] == "K"
-      k += 1
-    end
-
-    if string[pindex] == "L"
-      l += 1
-    end
-
-    if string[pindex] == "M"
-      m += 1
-    end
-    if string[pindex] == "N"
-      n += 1
-    end
-    if string[pindex] == "O"
-      o += 1
-    end
-    if string[pindex] == "P"
-      poo += 1
-    end
-    if string[pindex] == "Q"
-      q += 1
-    end
-    if string[pindex] == "R"
-      r += 1
-    end
-    if string[pindex] == "S"
-      s += 1
-    end
-    if string[pindex] == "T"
-      t += 1
-    end
-    if string[pindex] == "U"
-      u += 1
-    end
-    if string[pindex] == "V"
-      v += 1
-    end
-    if string[pindex] == "W"
-      w += 1
-    end
-    if string[pindex] == "X"
-      x += 1
-    end
-    if string[pindex] == "Y"
-      y += 1
-    end
-    if string[pindex] == "Z"
-      z += 1
-    end
-
-    if string[pindex] == " "
-    end
-
-    pindex += 1
   end
 
   until assumption == phrase
 
-    system "cls"
+    #system "cls"
 
     if thing == true
       puts "Don't change the spaces, it will only get confusing."
       thing = false
     end
 
-    puts "#{alpha} | A #{a}\t\t| #{string}"
-    puts "#{bravo} | B #{b}\t\t| #{assumption}"
-    puts "#{charlie} | C #{c}\t\t| Which letter do you wish to change?"
-    puts "#{delta} | D #{d}\t\t|"
-    puts "#{echo} | E #{e}\t\t|"
-    puts "#{foxtrot} | F #{f}\t\t|"
-    puts "#{golf} | G #{g}\t\t|"
-    puts "#{hotel} | H #{h}\t\t|"
-    puts "#{india} | I #{i}\t\t|"
-    puts "#{juliet} | J #{j}\t\t|"
-    puts "#{kilo} | K #{k}\t\t|"
-    puts "#{lima} | L #{l}\t\t|"
-    puts "#{mike} | M #{m}\t\t|"
-    puts "#{november} | N #{n}\t\t|"
-    puts "#{oscar} | O #{o}\t\t|"
-    puts "#{papa} | P #{poo}\t\t|"
-    puts "#{quebec} | Q #{q}\t\t|"
-    puts "#{romeo} | R #{r}\t\t|"
-    puts "#{sierra} | S #{s}\t\t|"
-    puts "#{tango} | T #{t}\t\t|"
-    puts "#{uniform} | U #{u}\t\t|"
-    puts "#{victor} | V #{v}\t\t|"
-    puts "#{whiskey} | W #{w}\t\t|"
-    puts "#{xray} | X #{x}\t\t|"
-    puts "#{yankee} | Y #{y}\t\t|"
-    puts "#{zulu} | Z #{z}\t\t|"
+    system "cls"
+
+    arry = [string, assumption, "Which letter do you wish to change?"]
+
+    move = 0
+    index = 0
+
+    while move <= 25
+
+      if index <= 2
+        size = many[index].to_s.size
+
+        if size == 1
+          puts "#{letters[index]} | #{alphabet[index]} #{many[index]} | #{arry[index]}"
+        else
+          puts "#{letters[index]} | #{alphabet[index]} #{many[index]}| #{arry[index]}"
+        end
+      else
+        size = many[index].to_s.size
+        if size == 1
+          puts "#{letters[index]} | #{alphabet[index]} #{many[index]} |"
+        else
+          puts "#{letters[index]} | #{alphabet[index]} #{many[index]}|"
+        end
+      end
 
 
+      move += 1
+      index += 1
+
+    end
     change = gets.chomp.upcase
 
     if change != " "
 
       system "cls"
 
-      puts "#{alpha} | A #{a} | #{string}"
-      puts "#{bravo} | B #{b} | #{assumption}"
-      puts "#{charlie} | C #{c} | Which letter do you wish to change?"
-      puts "#{delta} | D #{d} | #{change}"
-      puts "#{echo} | E #{e} | Which letter do you wish to change it to?"
-      puts "#{foxtrot} | F #{f} |"
-      puts "#{golf} | G #{g} |"
-      puts "#{hotel} | H #{h} |"
-      puts "#{india} | I #{i} |"
-      puts "#{juliet} | J #{j} |"
-      puts "#{kilo} | K #{k} |"
-      puts "#{lima} | L #{l} |"
-      puts "#{mike} | M #{m} |"
-      puts "#{november} | N #{n} |"
-      puts "#{oscar} | O #{o} |"
-      puts "#{papa} | P #{poo} |"
-      puts "#{quebec} | Q #{q} |"
-      puts "#{romeo} | R #{r} |"
-      puts "#{sierra} | S #{s} |"
-      puts "#{tango} | T #{t} |"
-      puts "#{uniform} | U #{u} |"
-      puts "#{victor} | V #{v} |"
-      puts "#{whiskey} | W #{w} |"
-      puts "#{xray} | X #{x} |"
-      puts "#{yankee} | Y #{y} |"
-      puts "#{zulu} | Z #{z} |"
+      arry = [string, assumption, "Which letter do you wish to change?", change, "Which letter do you wish to change it to?"]
+
+      move = 0
+      index = 0
+
+      while move <= 25
+
+        if index <= 4
+          size = many[index].to_s.size
+
+          if size == 1
+            puts "#{letters[index]} | #{alphabet[index]} #{many[index]} | #{arry[index]}"
+          else
+            puts "#{letters[index]} | #{alphabet[index]} #{many[index]}| #{arry[index]}"
+          end
+        else
+          size = many[index].to_s.size
+          if size == 1
+            puts "#{letters[index]} | #{alphabet[index]} #{many[index]} |"
+          else
+            puts "#{letters[index]} | #{alphabet[index]} #{many[index]}|"
+          end
+        end
+
+
+        move += 1
+        index += 1
+
+      end
 
       changer = gets.chomp.upcase
 
@@ -433,34 +373,34 @@ def covert_action_crypto()
   end
 
   system "cls"
+  arry = [string, assumption, "Which letter do you wish to change?", change, "Which letter do you wish to change it to?", changer, "MESSAGE DECODED"]
+  move = 0
+  index = 0
 
-  puts "#{alpha} | A #{a} | #{string}"
-  puts "#{bravo} | B #{b} | #{assumption}"
-  puts "#{charlie} | C #{c} | Which letter do you wish to change?"
-  puts "#{delta} | D #{d} | #{change}"
-  puts "#{echo} | E #{e} | Which letter do you wish to change it to?"
-  puts "#{foxtrot} | F #{f} | #{changer}"
-  puts "#{golf} | G #{g} | MESSAGE DECODED"
-  puts "#{hotel} | H #{h} |"
-  puts "#{india} | I #{i} |"
-  puts "#{juliet} | J #{j} |"
-  puts "#{kilo} | K #{k} |"
-  puts "#{lima} | L #{l} |"
-  puts "#{mike} | M #{m} |"
-  puts "#{november} | N #{n} |"
-  puts "#{oscar} | O #{o} |"
-  puts "#{papa} | P #{poo} |"
-  puts "#{quebec} | Q #{q} |"
-  puts "#{romeo} | R #{r} |"
-  puts "#{sierra} | S #{s} |"
-  puts "#{tango} | T #{t} |"
-  puts "#{uniform} | U #{u} |"
-  puts "#{victor} | V #{v} |"
-  puts "#{whiskey} | W #{w} |"
-  puts "#{xray} | X #{x} |"
-  puts "#{yankee} | Y #{y} |"
-  puts "#{zulu} | Z #{z} |"
+  while move <= 25
 
+    if index <= 6
+      size = many[index].to_s.size
+
+      if size == 1
+        puts "#{letters[index]} | #{alphabet[index]} #{many[index]} | #{arry[index]}"
+      else
+        puts "#{letters[index]} | #{alphabet[index]} #{many[index]}| #{arry[index]}"
+      end
+    else
+      size = many[index].to_s.size
+      if size == 1
+        puts "#{letters[index]} | #{alphabet[index]} #{many[index]} |"
+      else
+        puts "#{letters[index]} | #{alphabet[index]} #{many[index]}|"
+      end
+    end
+
+
+    move += 1
+    index += 1
+
+  end
 end
 
 puts covert_action_crypto()
